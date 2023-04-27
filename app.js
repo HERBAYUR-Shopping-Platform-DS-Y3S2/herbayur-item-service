@@ -16,6 +16,7 @@ const auth = basicAuth({
 
 // routes
 const items = require("./routes/items"); //use this when implementing routes
+const user = require("./routes/User"); //use this when implementing routes
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(express.json({ extended: false }));
 
 // use Routes
 app.use("/api/items", items); //use this when implementing routes
+app.use("/api/user", user); //use this when implementing routes
 
 app.use(express.json({ extended: false }));
 
