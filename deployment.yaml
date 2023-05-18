@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: herbayur-item-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: herbayur-item-service-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: herbayur-item-service-app
+    spec:
+      containers:
+      - name: herbayur-item-service-server
+        image: supunhansaka/herbayur-item-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5003
